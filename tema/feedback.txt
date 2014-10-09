@@ -1,1 +1,40 @@
 [initial]
+- functie pentru afisarea formului
+- connect sa returneze resursa, daca eroare die
+- set_session_zero rescris sa ia paramentru cifra ( set_session_tries(int) )
+- check_credentials rescris cu 2 queryies:
+	1. care verifica existenta username-ului, 
+	2. ia username cu pass (implicit verifica passul daca e identic cu cel POST
+	sau o functie care verifica existenta si alta daca password ii ok cu ce a dat
+- MVC aplicat pe functii 
+- index.php logout link
+- logout sa crepe sesiunea si redirect pe index ( header("Location: index.php"); )
+- inca un 'controller' main.php unde userul poate cauta dupa nume un produs 
+	- daca nu esti logat redirect pe index
+\functions
+	\models      <-- fisiere cu functii de preluare date
+			- numa aci sa folosesti SESSION
+		\common.php  //functii care sunt folosite in restul
+		\login.php
+			model_user_exists($user_name)
+		\register.php
+	\views       <-- fisiere cu functii de afisare
+		\login.php
+			view_login_form();
+		\register.php
+index.php            <-- dirijeaza ce se afiseaza si cu ce date (controller)
+		- numa aci sa iei POST si GET
+	if(isset($_post....)
+	{
+		if(model_user_exist($_POST...))
+		{
+			if(model_pass_ok(POST...)
+			{// sau model_get_user_by_name() si dupa varifici
+			}
+			else
+			{ view_wrong_pass();}
+		}
+		else
+		{
+			view_no_user_by_name($name);
+		}		

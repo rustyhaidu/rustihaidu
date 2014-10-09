@@ -3,13 +3,11 @@
 function connect()
 {
 	$con = mysqli_connect("localhost", "root", "", "xxs");
-
 	if (mysqli_connect_errno())
 	{
-
 		echo "Failed to  connect: ".mysqli_connect_error();
-		
 	}
+	return $con;
 }
 
 function check_fields()

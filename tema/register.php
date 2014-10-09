@@ -29,4 +29,26 @@
 </html>
 <?php
 require 'functions_for_register.php';
-check_fields();
+//array('Username is too short','passwords do not match');
+$fields = check_error_fields($_POST);
+if(!empty($fields)) {
+    //display errror messaage
+}
+else{
+    $exists = model_user_exists($user_name); //poate sa fie in check_error_fields();
+    if(!$exists) {
+        $success = model_insert_user($_POST);
+        if(!$success)
+        {
+            view_error_insert($POST);
+        }
+        else
+        {
+            common_redirect_to('login.php?message=1');
+        }
+    } else {
+        view_user_exists($_POST);
+    }
+}
+
+
