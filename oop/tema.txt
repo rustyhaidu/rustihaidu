@@ -7,9 +7,11 @@
 	getAngleCount() -> cate unghiuri are
 	getLine(1..4)
 	getLength(1..4) ->lungimea liniei nr 1
-	
+	getArea()      ->aria :D
+
 	ex Cube:
 	getFace(1..6)   -> return squre
 
-	
+- De folosit: public, protected, private
+
 class circle, class square, class rectangle, class diamond, class cube, class sphere
