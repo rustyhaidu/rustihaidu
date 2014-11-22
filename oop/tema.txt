@@ -1,0 +1,15 @@
+- Define 'base' class
+- Properties: name, angles, lines,
+- Methods: getName(), getAngles(), 
+
+	General:
+	getAngle(1..4) -> returneaza un unghi in functie de indice
+	getAngleCount() -> cate unghiuri are
+	getLine(1..4)
+	getLength(1..4) ->lungimea liniei nr 1
+	
+	ex Cube:
+	getFace(1..6)   -> return squre
+
+	
+class circle, class square, class rectangle, class diamond, class cube, class sphere
