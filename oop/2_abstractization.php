@@ -1,30 +1,4 @@
 <?php
-// ->method()   [dot equivalent Java]
-// :: static
-//interface xx { //nu poti private si protected
-//    public function yy($caca);
-//    static function aaaa2();
-//}
-//
-//class xxxy implements xx{
-//    public function yy($caca){}
-//    static function aaaa2(){}
-//}
-//
-//class Factory{
-//    function build($data, $objType) {
-//        $method = 'build_'.$objType;
-//        $this->$method($data);
-//    }
-//    private function build_Pizza($data) {
-//
-//    }
-//}
-//
-//$data = $Db->getPizzaData($id);
-//$pizza = $factory->build($data, 'Pizza');
-//
-
 abstract class Autovehicle {
     protected $wheels = 2;
     public abstract function getWheels();
@@ -50,9 +24,9 @@ class Car extends Autovehicle {
     public function getPassengerIds() {
         $ids = array();
         //if(!empty($this->passengers)) {
-            foreach($this->passengers as $pass) {
-                $ids[]=$pass->id;
-            }
+        foreach($this->passengers as $pass) {
+            $ids[]=$pass->id;
+        }
         //}
         return $ids;
     }
@@ -102,7 +76,7 @@ class B1 extends Beattle
 {
 
 }
-**/
+ **/
 
 echo Car::$smth;
 $car = new Car();
@@ -130,8 +104,8 @@ class DateGenerator {
             case 1:
                 return 'January';
                 break;
+        }
     }
-}
 }
 
 $dateGeneratorObject = new DateGenerator();
@@ -152,5 +126,3 @@ class two extends one{
 
 $x = new two();
 echo $x->getWh();
-
-
