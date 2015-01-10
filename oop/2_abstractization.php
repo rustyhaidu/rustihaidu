@@ -7,9 +7,10 @@ abstract class Autovehicle {
 
 class Car extends Autovehicle {
     protected $wheels=4;      //suprascri
-    private $doors = 4;       //nu mosteneste copii, poate fi apelata din interior ($car->doors //fatala)
+    private $doors = 4;       //nu se mosteneste la copii, poate fi apelata din interior ($car->doors //fatala,
+                                                //nu vreau sa mosteneasca numarul usilor)
     public $color = 'red';    //se mosteneste si poate fi accesat direct $car->color;
-    protected $name ='aa';    //se mosteneste dar nu poate fi accesat direct
+    protected $name ='aa';    //se mosteneste dar nu poate fi accesat direct, $c->name;
     static $smth ='smth val'; //poate fi apelat static  Car::smth fara o instanta
     private $passengers = array();
 
