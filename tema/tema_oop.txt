@@ -1,0 +1,14 @@
+17.01.2015
+
+Pentru adaugare de clase noi:
+fisiere noi(folderul sugestiv)
+modificare fisier oop/geometry/autoload.php
+
+getFace(1..6)  - Obiectele care ar trebui sa aiba fetze (sfera nu de ex)
+
+class circle,
+class sphere,
+class rectangle,
+class diamond,
+class cube
+

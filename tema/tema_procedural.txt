@@ -1,0 +1,7 @@
+17.01.2015
+Functie care:
+	1. findAllNumbersGreaterThan($array, $number)  - Sa returneze un array cu toate elementele mai mare decat param 2
+	2. findAllWordsWithVocals($array)              - Returneze un array cu cuvintele care contin vocala
+	3. findElement($multidimArray, $number)        - Returneze array('0'=>linia,'1'=>coloana)
+
+

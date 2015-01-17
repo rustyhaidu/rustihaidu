@@ -82,6 +82,8 @@ class B1 extends Beattle
 echo Car::$smth;
 $car = new Car();
 echo $car->color;
+$car->color = 'green';
+echo $car->color;
 
 Car::checkVariables($car);
 

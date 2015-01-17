@@ -5,7 +5,7 @@
  * Implement Street class (has many Immobil)
  */
 
-require_once 'include_classes.php';
+require_once '../../oop/immobiliar/autoload.php';
 require_once 'functions.php';
 
 $randomGenerator = new RandomObjects;

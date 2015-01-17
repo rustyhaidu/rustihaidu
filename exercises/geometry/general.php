@@ -4,7 +4,7 @@
  * Implement Immobil abstract class, Casa, Apartament,Garsoniera, Vila class
  * Implement Street class (has many Immobil)
  */
-require_once 'geometry/autoload.php'; //se incarca toate clasele
+require_once '../../oop/geometry/autoload.php'; //se incarca toate clasele
 
 $square = new Square(11);
 echo "<br>Name :".$square->getName();
