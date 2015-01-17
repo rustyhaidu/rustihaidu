@@ -27,6 +27,10 @@ class Street
     {
         return $this->estates;
     }
+    public function setEstates($estates)
+    {
+        $this->estates = $estates;
+    }
     public function setName ($setName)
     {
         $this->name = $setName;

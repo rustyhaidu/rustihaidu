@@ -5,7 +5,7 @@ class RandomObjects
      * @param $id
      * @return Street
      */
-    public function getStreetById($id) {
+    static function getStreetById($id) {
         $st = new Street($id);
         $st->setName('Observatorului');
 
@@ -22,7 +22,7 @@ class RandomObjects
      * Daca nu zici public, private sau protected atunci e socotit PUBLIC
      * @return House
      */
-    function getRandomHouse()
+    static function getRandomHouse()
     {
         $randHouse = new House(rand(125,200));
         $randHouse->setNumber(rand(1,666));

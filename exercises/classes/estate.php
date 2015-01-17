@@ -17,9 +17,20 @@ abstract class Estate
     /**
      * @return mixed
      */
-    public function getRooms()
+    public function getRooms($nonType = TRUE)
     {
-        return $this->rooms;
+        if($nonType){
+            return $this->rooms;
+        }
+        $array_rooms_by_type = array();
+        foreach ($this->rooms as $room)
+        {
+            if ($room->getType() == $nonType)
+            {
+                $array_rooms_by_type[] = $room;
+            }
+        }
+        return $array_rooms_by_type;
     }
 
     /**
@@ -28,6 +39,7 @@ abstract class Estate
     public function setRooms($rooms)
     {
         $this->rooms = $rooms;
+
     }
 
     public function __construct($id = null){
