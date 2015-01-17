@@ -10,7 +10,25 @@ abstract class Estate
     /**
      * @var Street $street
      */
-    private $street;
+    protected $street;
+
+    protected $rooms;
+
+    /**
+     * @return mixed
+     */
+    public function getRooms()
+    {
+        return $this->rooms;
+    }
+
+    /**
+     * @param mixed $rooms
+     */
+    public function setRooms($rooms)
+    {
+        $this->rooms = $rooms;
+    }
 
     public function __construct($id = null){
         if(is_integer($id)) {
