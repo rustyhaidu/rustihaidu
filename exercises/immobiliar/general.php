@@ -8,14 +8,12 @@
 require_once '../../oop/immobiliar/autoload.php';
 require_once 'functions.php';
 
-$randomGenerator = new RandomObjects;
-
 echo '<pre>';
-$street = $randomGenerator->getStreetById(rand(10,15));
+$street = RandomObjects::getStreetById(rand(10,15));
 print_r($street);
 echo '</pre>';
 
-$house = $randomGenerator->getRandomHouse();
+$house = RandomObjects::getRandomHouse();
 echo '<pre>';
 print_r($house);
 echo '</pre>';
