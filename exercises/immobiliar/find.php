@@ -18,7 +18,6 @@ var_dump($livings) returneaza numarul de livinguri si metri patrati
 var_dump($kitchen)
 
 */
-
 function getRoom_by_type($type, $rooms)
 {
     $array_rooms_by_type = array();
