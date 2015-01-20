@@ -1,14 +1,23 @@
 17.01.2015
 
 Pentru adaugare de clase noi:
-fisiere noi(folderul sugestiv)
-modificare fisier oop/geometry/autoload.php
+fisiere noi(folderul sugestiv) modifica fisierul oop/vending_machine/autoload.php
 
-getFace(1..6)  - Obiectele care ar trebui sa aiba fetze (sfera nu de ex)
 
-class circle,
-class sphere,
-class rectangle,
-class diamond,
-class cube
+
+Implementeaza clasele:
+
+Money      : ammount(int) [bancnote sau fise gen 1,5,10,15]
+Ingredient : name(string)
+Recipe     : id(int), price(Money), ingredients(array de Ingredient)
+Machine    : money(array de Money),ingredients(array de Ingredient),recipes(array Recipes)
+
+
+Metode obligatorii de machine:
+
+seteri si geteri,
+getRecipes()
+getIngredients()
+canBuy(Recipe $r, Money $m)  <- true daca avem suficienti bani si ingrediente suficiente
+buy(Recipe $r, Money $m)     <- returneaza restul (array de Money)
 
