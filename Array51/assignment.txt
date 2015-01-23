@@ -1,0 +1,10 @@
+Create a basic calendar app written in PHP from scratch or in a framework of choice. The application should have the following features:
+- Display events in a calendar
+- Create / update / delete an event
+- Display events chronologically
+
+Other requirements:
+- Put the source code online on your GitHub within 5 days
+- Explain and justify technology / architecture choices
+
+Attached to this e-mail you can also find a copy of the job application, it has a few more details.
