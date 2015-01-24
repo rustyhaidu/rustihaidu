@@ -1,7 +1,8 @@
 <?php
 
-function calendar_header($monthName,$month,$year)
+function calendar_header($month,$year)
 {
+	$monthName  = get_month_name($month);
 	echo '<table border = "1">
 			<tr>
 				<td><input style="width:50px" type = "button" value="<" name = "previousbutton" onclick="goLastMonth(\''.$_SERVER['PHP_SELF'].'\','.$month.','.$year.')" ></td>
@@ -20,8 +21,9 @@ function calendar_header($monthName,$month,$year)
 			</tr>';
 }
 
-function get_first_day($numDays,$month,$year)
+function get_first_day($month,$year)
 {
+	$numDays = get_num_days($month,$year);
 	echo '<tr>';
 	$counter = 0;
 	for($i = 1;$i < $numDays+1; $i++,$counter++) {

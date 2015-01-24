@@ -39,3 +39,8 @@ function get_num_days($month,$year)
 	return $numDays;
 }
 
+function display_calendar($month,$year)
+{
+	calendar_header($month,$year);
+	get_first_day($month,$year);
+}

@@ -12,11 +12,9 @@ $array_date = current_day_month_year();
 $day        = $array_date['day'];
 $month      = $array_date['month'];
 $year       = $array_date['year'];
-$monthName  = get_month_name($month);
-$numDays    = get_num_days($month,$year);
 
-calendar_header($monthName,$month,$year);
-get_first_day($numDays,$month,$year);
+display_calendar($month,$year);
+
 if (isset($_GET['add'])) {
 	$title = isset($_POST['txttitle'])?$_POST['txttitle']:null;
 	$detail = isset($_POST['txtdetail'])?$_POST['txtdetail']:null;
