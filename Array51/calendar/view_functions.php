@@ -76,3 +76,4 @@ function event_form($day,$month,$year, $id = 0)
 		</table>
 	</form>';
 }
+

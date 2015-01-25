@@ -20,9 +20,9 @@ if (isset($_GET['add'])) {
 	$detail = isset($_POST['txtdetail'])?$_POST['txtdetail']:null;
 	$result = insert_event($day, $month, $year, $title, $detail);
 	if($result) {
-		echo "</br>Event added successfully";
+		echo "</br>Event added successfully</br>";
 	} else {
-		"</br>Event failed to be added";
+		"</br>Event failed to be added</br>";
 	}
 }
 
@@ -31,8 +31,24 @@ if (isset($_GET['v'])) {
 		event_form($day,$month,$year);
 	}
 	echo "<a href='".$_SERVER['PHP_SELF']."?month=".$month."&day=".$day."&year=".$year."&v=true&f=true'>Add Event</a>";
-	show_events($day,$month,$year);
+	show_events($day,$month,$year);	
 }
+if (isset($_GET['delete']))
+	{
+		//echo $_GET['id'];
+		delete_event($day,$month,$year);		
+	}
+if (isset($_GET['edit']))
+	{
+		//echo $_GET['id'];
+		$id = edit_event_form($day,$month,$year);
+		
+	}
+if (isset($_POST['btnedit']))
+{
+	update_event($id);
+}	
+
 ?>
 	</body>
 </html>	
