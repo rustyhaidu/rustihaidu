@@ -31,7 +31,7 @@ if (isset($_GET['v'])) {
 		event_form($day,$month,$year);
 	}
 	echo "<a href='".$_SERVER['PHP_SELF']."?month=".$month."&day=".$day."&year=".$year."&v=true&f=true'>Add Event</a>";
-	echo '</br>List events</br>';
+	show_events($day,$month,$year);
 }
 ?>
 	</body>
