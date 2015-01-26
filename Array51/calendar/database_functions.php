@@ -69,7 +69,7 @@ function edit_event_form($day,$month,$year)
 				$event_details = $value['details'];							
 			}
 	
-	echo '<form name="eventform" method = "post" action ='.$_SERVER['PHP_SELF'].'?day='.$day.'&month='.$month.'&year='.$year.'&v=true&edit=true&id='.$id.'>
+	echo '<form name="eventform" method = "post" action ='.$_SERVER['PHP_SELF'].'?&edit=true&id='.$id.'>
 		<table width="400px">
 			<tr>
 				<td width="50px">Title</td>
