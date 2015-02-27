@@ -56,9 +56,9 @@ function get_first_day($month,$year)
 
 function event_form($day,$month,$year, $id = 0)
 {
-	if($id>0) {
+	/*if($id>0) {
 
-	}
+	}*/
 	echo '<form name="eventform" method = "post" action ='.$_SERVER["PHP_SELF"].'?month='.$month.'&day='.$day.'&year='.$year.'&v=true&add=true>
 		<table width="400px">
 			<tr>

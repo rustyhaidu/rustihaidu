@@ -27,27 +27,31 @@ if (isset($_GET['add'])) {
 }
 
 if (isset($_GET['v'])) {
+	show_events($day,$month,$year);	
 	if (isset($_GET['f'])) {
 		event_form($day,$month,$year);
 	}
 	echo "<a href='".$_SERVER['PHP_SELF']."?month=".$month."&day=".$day."&year=".$year."&v=true&f=true'>Add Event</a>";
-	show_events($day,$month,$year);	
+	
 }
 if (isset($_GET['delete']))
 	{
 		//echo $_GET['id'];
 		delete_event($day,$month,$year);		
 	}
+	
+
 if (isset($_GET['edit']))
+{				
+	$id = edit_event_form($day,$month,$year);
+	if (isset($_POST['btnedit']))
 	{
-		//echo $_GET['id'];
-		$id = edit_event_form($day,$month,$year);
+		update_event($id);			
+	}		
+}
 		
-	}
-if (isset($_POST['btnedit']))
-{
-	update_event($id);
-}	
+
+
 
 ?>
 	</body>
