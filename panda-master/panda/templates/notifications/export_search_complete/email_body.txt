@@ -1,0 +1,5 @@
+{% load i18n %}
+{% blocktrans %}Export complete: "{{ query }}" in all datasets{% endblocktrans %}
+
+{% trans "Download your results:" %}
+http://{{ site_domain }}/#export/{{ related_export.pk }}

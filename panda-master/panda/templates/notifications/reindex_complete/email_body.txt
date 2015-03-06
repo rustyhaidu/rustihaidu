@@ -1,0 +1,6 @@
+{% load i18n %}
+{% blocktrans with related_dataset.name as dataset_name and related_dataset.row_count|default:0 as row_count %}Reindex complete: {{ dataset_name }} ({{ row_count }} rows){% endblocktrans %}
+
+http://{{ site_domain }}/#dataset/{{ related_dataset.slug }}
+
+{% if type_summary %}{{ type_summary }}{% endif %}

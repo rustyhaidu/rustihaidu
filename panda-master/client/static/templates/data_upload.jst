@@ -1,0 +1,133 @@
+<div id="upload">
+    <h2>
+        <% if (dataset) { %>
+            <%= interpolate(text.add_data, { dataset: '<a href="#dataset/' + dataset.slug  + '">' + unescape(dataset.name) }, true) %></a>
+        <% } else { %>
+            <%= text.upload_new_data %> 
+        <% } %>
+    </h2>
+
+    <% if (available_space) { %>
+        <% if (available_space.uploads.free_space <= PANDA.settings.AVAILABLE_SPACE_CRITICAL) { %>
+        <div class="alert alert-error" style="display: block;"><%= interpolate(text.upload_space_critical, { space: PANDA.utils.format_file_size(available_space.uploads.free_space) }, true) %></div>
+        <% } else if (available_space.uploads.free_space <= PANDA.settings.AVAILABLE_SPACE_WARN) { %>
+        <div class="alert alert-warn" style="display: block;"><%= interpolate(text.upload_space_warning, { space: PANDA.utils.format_file_size(available_space.uploads.free_space) }, true) %></div>
+        <% } %>
+
+        <% if (available_space.indices.free_space <= PANDA.settings.AVAILABLE_SPACE_CRITICAL) { %>
+        <div class="alert alert-error" style="display: block;"><%= interpolate(text.index_space_critical, { space: PANDA.utils.format_file_size(available_space.indices.free_space) }, true) %></div>
+        <% } else if (available_space.indices.free_space <= PANDA.settings.AVAILABLE_SPACE_WARN) { %>
+        <div class="alert alert-warn" style="display: block;"><%= interpolate(text.index_space_warning, { space: PANDA.utils.format_file_size(available_space.indices.free_space) }, true) %></div>
+        <% } %>
+    <% } %>
+
+    <% if (dataset) { %>
+    <div class="alert alert-block alert-warn" style="display: block;">
+        <p>
+            <%= text.adding_data_warning %>
+        </p>
+    </div>
+    <% } %>
+
+    <div id="steps">
+        <div id="step-1" class="step well collapse in">
+            <h3><%= text.select_your_file %></h3>
+           
+            <p><%= text.file_types %></p>
+
+            <input type="file" id="upload-file" /><br />
+
+            <div class="alert alert-warn notes xls">
+                <%= text.excel_styles_warning %> 
+            </div>
+            
+            <div class="alert alert-error notes access">
+                <%= text.access_files_error %>.
+            </div>
+
+            <div class="alert alert-error notes dbf">
+                <%= text.dbf_files_error %>
+            </div>
+
+            <div class="alert alert-error notes other">
+                <%= text.unknown_files_error %>
+            </div>
+
+            <div class="csv-options">
+                <h5><%= text.advanced_csv_options %></h5>
+                <label for="encoding"><%= text.character_encodings %> <a data-content="<%= text.character_encodings_help %>" title="<%= text.character_encodings %>" data-placement="right" href="#" onclick="return false;" rel="popover"><i class="icon-question-sign"></i></a></label>
+                <input type="text" id="upload-encoding" class="input-small" placeholder="utf-8" />
+            </div>
+
+            <div><input type="button" name="begin" id="upload-begin" class="btn btn-success" value="<%= text.begin_upload %>" /></div>
+            
+            <div id="step-1-alert" class="alert"></div>
+        </div>
+
+        <div id="step-2" class="step well collapse">
+            <h3><% if (dataset) { %><%= text.wait_for_upload %><% } else { %><%= text.describe_your_dataset %><% } %></h3>
+
+            <p><%= text.while_youre_waiting %></p>
+
+            <div class="progress-bar">
+                <span class="progress-value"><strong>0%</strong></span>
+            </div>
+
+            <div id="step-2-alert" class="alert"></div>
+            
+            <% if (!dataset) { %>
+            <form id="dataset-details-form" class="form-stacked">
+                <div class="control-group">
+                    <label for="dataset-name"><%= text.dataset_name %></label>
+                    <input class="span5" id="dataset-name" name="name" size="30" type="text" value="" maxlength="256" />
+                </div>
+
+                <div class="control-group">
+                    <label for="dataset-description"><%= text.dataset_description %></label>
+                    <textarea class="span6" id="dataset-description" name="description" rows="5"></textarea>
+                </div>
+
+                <label for="categories"><%= text.dataset_categories %></label>
+
+                <% _.each(all_categories, function(category) { %>
+                <label class="checkbox">
+                    <input type="checkbox" name="categories" value="<%= category.slug %>" />
+                    <%= category.name %>
+                </label>
+                <% }); %>
+            </form>
+            <% } %>
+            
+            <div class="ie-progress">
+                <p><strong><%= text.uploading %></strong></p>
+            </div> 
+
+            <input type="button" name="continue" id="upload-continue" class="btn btn-success" value="<%= text.continue_to_preview %>" disabled="disabled" />
+        </div>
+
+        <div id="step-3" class="step well collapse">
+            <h3><%= text.preview_your_data %></h3>
+            <p><%= text.please_review %></p>
+
+            <div class="sample-data">
+            </div>
+            
+            <div id="step-3-alert" class="alert"></div>
+
+            <input type="button" name="continue" id="upload-finish" class="btn btn-success" value="<%= text.finish %>" disabled="disabled" />
+            <input type="button" name="start-over" id="upload-start-over" class="btn" value="<%= text.start_over %>" disabled="disabled" />
+        </div>
+    </div>
+</div>
+
+<div id="upload-traceback-modal" class="modal hide fade in">
+    <div class="modal-header">
+        <a href="#" class="close">&times;</a>
+        <h3><%= text.error_title %></h3>
+    </div>
+    <div class="modal-body">
+    </div>
+    <div class="modal-footer">
+        <input type="button" class="btn" data-dismiss="modal" value="<%= text.error_close %>" />
+    </div>
+</div>

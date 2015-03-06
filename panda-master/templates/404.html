@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% trans "Not Found" as error %} 
+
+{% block title %}{{ error }}{% endblock %}
+
+{% block content %}{{ error }}{% endblock %}
+

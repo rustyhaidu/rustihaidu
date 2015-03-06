@@ -1,0 +1,32 @@
+<h4><%= text.search_by_column %></h4>
+<% if (has_any_filters) { %>
+<table class="table table-condensed">
+<% _.each(dataset.column_schema, function(c, i) { %>
+    <tbody id="filter-<%= i %>"  class="filter control-group" data-filter-id="<%= i %>">
+    <% if (column_is_filterable(c) && column_has_query(c)) { %>
+    <%= render_filter(c, i) %>
+    <% } %>
+    </tbody>
+<% }); %>
+</table>
+
+<div class="row-fluid">
+    <div class="span10">
+        <strong><%= text.add_to_search %></strong>&nbsp;</td>
+        <select id="add-filter">
+            <option value=""><%= text.pick_a_column %></option>
+            <% _.each(dataset.column_schema, function(c, i) { %>
+                <% if (column_is_filterable(c)) { %>
+                <option value="<%= i %>"><%= c["name"] %></option>
+                <% } %>
+            <% }); %>
+        </select>
+    </div>
+    <div class="span2">
+        <input type="submit" class="btn primary dataset-search-submit" value="<%= text.search %>" />
+    </div>
+</div>
+<% } else { %>
+<%= text.no_specific_columns_explainer %>
+<% } %>
+

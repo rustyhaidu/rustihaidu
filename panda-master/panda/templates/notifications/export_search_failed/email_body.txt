@@ -1,0 +1,8 @@
+{% load i18n %}
+{% blocktrans %}Export failed: "{{ query }}" in all datasets{% endblocktrans %}
+
+{{ error }}
+
+{% trans "Traceback:" %}
+
+{{ traceback }}

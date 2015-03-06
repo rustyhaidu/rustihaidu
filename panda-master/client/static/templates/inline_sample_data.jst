@@ -1,0 +1,18 @@
+<table  class="sample-data table table-striped table-bordered table-condensed">
+    <thead>
+        <tr>
+        <% _.each(columns, function(c) { %>
+            <th><%= c %></th>
+        <% }); %>
+        </tr>
+    </thead>
+    <tbody>
+    <% _.each(sample_data, function(r) { %>
+        <tr>
+        <% _.each(r, function(d) { %>
+            <td><%= d %></td>
+        <% }); %>
+        </tr>
+    <% }); %>
+    </tbody>
+</table>

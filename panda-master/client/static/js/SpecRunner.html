@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Jasmine Spec Runner</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-1.1.0/jasmine_favicon.png">
+
+  <link rel="stylesheet" type="text/css" href="lib/jasmine-1.1.0/jasmine.css">
+  <script type="text/javascript" src="lib/jasmine-1.1.0/jasmine.js"></script>
+  <script type="text/javascript" src="lib/jasmine-1.1.0/jasmine-html.js"></script>
+
+    <!-- include source files here... -->
+    <script type="text/javascript" src="lib/sinon-1.2.0.js"></script>
+    <script type="text/javascript" src="lib/jasmine-sinon.js"></script>
+    <script type="text/javascript" src="lib/jasmine-jquery.js"></script>
+
+    <script type="text/javascript" src="lib/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="lib/jquery.tablesorter.js"></script>
+    <script type="text/javascript" src="lib/bootstrap.js"></script>
+    <script type="text/javascript" src="lib/bootbox.js"></script>
+    <script type="text/javascript" src="lib/underscore.js"></script>
+    <script type="text/javascript" src="lib/backbone.js"></script>
+    <script type="text/javascript" src="lib/backbone-tastypie.js"></script>
+    <script type="text/javascript" src="lib/json2.js"></script>
+    <script type="text/javascript" src="lib/moment.js"></script>
+    <script type="text/javascript" src="lib/fileuploader.js"></script>
+    <script type="text/javascript" src="utils.js"></script>
+    <script type="text/javascript" src="application.js"></script>
+
+    <script type="text/javascript" src="http://localhost:8000/templates.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/i18n.js"></script>
+
+    <script type="text/javascript" src="text/activate.js"></script>
+    <script type="text/javascript" src="text/data_upload.js"></script>
+    <script type="text/javascript" src="text/dataset_results.js"></script>
+    <script type="text/javascript" src="text/dataset_search.js"></script>
+    <script type="text/javascript" src="text/dataset_view.js"></script>
+    <script type="text/javascript" src="text/datasets_search.js"></script>
+    <script type="text/javascript" src="text/datasets_results.js"></script>
+    <script type="text/javascript" src="text/fetch_export.js"></script>
+    <script type="text/javascript" src="text/home.js"></script>
+    <script type="text/javascript" src="text/inline_search_filters.js"></script>
+    <script type="text/javascript" src="text/inlines.js"></script>
+    <script type="text/javascript" src="text/login.js"></script>
+    <script type="text/javascript" src="text/modal_change_password.js"></script>
+    <script type="text/javascript" src="text/modal_dataset_edit.js"></script>
+    <script type="text/javascript" src="text/modal_related_links.js"></script>
+    <script type="text/javascript" src="text/modal_user_edit.js"></script>
+    <script type="text/javascript" src="text/not_found.js"></script>
+    <script type="text/javascript" src="text/notifications.js"></script>
+    <script type="text/javascript" src="text/reset_password.js"></script>
+    <script type="text/javascript" src="text/search.js"></script>
+    <script type="text/javascript" src="text/search_results.js"></script>
+    <script type="text/javascript" src="text/server_error.js"></script>
+    <script type="text/javascript" src="text/user.js"></script>
+    
+    <script type="text/javascript" src="routers/index.js"></script>
+    <script type="text/javascript" src="models/notifications.js"></script>
+    <script type="text/javascript" src="models/search_subscriptions.js"></script>
+    <script type="text/javascript" src="models/exports.js"></script>
+    <script type="text/javascript" src="models/categories.js"></script>
+    <script type="text/javascript" src="models/users.js"></script>
+    <script type="text/javascript" src="models/data_uploads.js"></script>
+    <script type="text/javascript" src="models/related_uploads.js"></script>
+    <script type="text/javascript" src="models/tasks.js"></script>
+    <script type="text/javascript" src="models/data.js"></script>
+    <script type="text/javascript" src="models/datasets.js"></script>
+    <script type="text/javascript" src="views/not_found.js"></script>
+    <script type="text/javascript" src="views/server_error.js"></script>
+    <script type="text/javascript" src="views/login.js"></script>
+    <script type="text/javascript" src="views/home.js"></script>
+    <script type="text/javascript" src="views/dataset_view.js"></script>
+    <script type="text/javascript" src="views/dataset_search.js"></script>
+    <script type="text/javascript" src="views/dataset_results.js"></script>
+    <script type="text/javascript" src="views/search_results.js"></script>
+    <script type="text/javascript" src="views/search.js"></script>
+    <script type="text/javascript" src="views/data_upload.js"></script>
+    <script type="text/javascript" src="views/root.js"></script>
+
+    <!-- include spec files here... -->
+    <script type="text/javascript" src="spec/mock_xhr_responses.js"></script>
+
+    <script type="text/javascript" src="spec/routers/index.js"></script>
+    <script type="text/javascript" src="spec/models/datasets.js"></script>
+    <script type="text/javascript" src="spec/models/tasks.js"></script>
+    <script type="text/javascript" src="spec/views/not_found.js"></script>
+    <script type="text/javascript" src="spec/views/root.js"></script>
+
+  <script type="text/javascript">
+    (function() {
+      var jasmineEnv = jasmine.getEnv();
+      jasmineEnv.updateInterval = 1000;
+
+      var trivialReporter = new jasmine.TrivialReporter();
+
+      jasmineEnv.addReporter(trivialReporter);
+
+      jasmineEnv.specFilter = function(spec) {
+        return trivialReporter.specFilter(spec);
+      };
+
+      var currentWindowOnload = window.onload;
+
+      window.onload = function() {
+        if (currentWindowOnload) {
+          currentWindowOnload();
+        }
+        execJasmine();
+      };
+
+      function execJasmine() {
+        jasmineEnv.execute();
+      }
+
+    })();
+  </script>
+
+</head>
+
+<body>
+</body>
+</html>

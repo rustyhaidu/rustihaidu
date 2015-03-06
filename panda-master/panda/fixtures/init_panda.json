@@ -1,0 +1,90 @@
+[
+    {
+        "pk": 1, 
+        "model": "auth.group", 
+        "fields": {
+            "name": "panda_user", 
+            "permissions": [
+                [
+                    "add_dataset", 
+                    "panda", 
+                    "dataset"
+                ], 
+                [
+                    "change_dataset", 
+                    "panda", 
+                    "dataset"
+                ], 
+                [
+                    "delete_dataset", 
+                    "panda", 
+                    "dataset"
+                ], 
+                [
+                    "change_notification", 
+                    "panda", 
+                    "notification"
+                ], 
+                [
+                    "change_dataupload", 
+                    "panda", 
+                    "dataupload"
+                ], 
+                [
+                    "delete_dataupload", 
+                    "panda", 
+                    "dataupload"
+                ], 
+                [
+                    "change_relatedupload", 
+                    "panda", 
+                    "relatedupload"
+                ],
+                [
+                    "delete_relatedupload", 
+                    "panda", 
+                    "relatedupload"
+                ],
+                [
+                    "add_activitylog", 
+                    "panda", 
+                    "activitylog"
+                ],
+                [
+                    "add_searchsubscription", 
+                    "panda", 
+                    "searchsubscription"
+                ],
+                [
+                    "delete_searchsubscription", 
+                    "panda", 
+                    "searchsubscription"
+                ]
+            ]
+        }
+    },
+    {
+        "pk": 1, 
+        "model": "panda.category", 
+        "fields": {
+            "name": "Crime",
+            "slug": "crime"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "panda.category", 
+        "fields": {
+            "name": "Education",
+            "slug": "education"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "panda.category", 
+        "fields": {
+            "name": "Politics",
+            "slug": "politics"
+        }
+    }
+]
