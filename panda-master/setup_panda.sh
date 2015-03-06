@@ -1,11 +1,3 @@
-#!/bin/bash
-
-# PANDA Project server setup script for Ubuntu 12.04
-# Must be executed with sudo!
-
-set -x
-exec 1> >(tee /var/log/panda-install.log) 2>&1
-
 echo "PANDA installation beginning."
 
 VERSION="1.1.2"
